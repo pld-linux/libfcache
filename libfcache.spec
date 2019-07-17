@@ -1,28 +1,31 @@
+# m4/libcdata.m4
+%define		libcdata_ver	20160108
+# m4/libcerror.m4
+%define		libcerror_ver	20120425
+# m4/libcthreads.m4
+%define		libcthreads_ver	20160404
 Summary:	Library to provide generic file data cache functions
 Summary(pl.UTF-8):	Biblioteka udostępniająca funkcje do ogólnego buforowania danych z plików
 Name:		libfcache
-Version:	20150104
-Release:	2
+Version:	20181011
+Release:	1
 License:	LGPL v3+
 Group:		Libraries
-Source0:	https://github.com/libyal/libfcache/archive/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	bad6ee41c037038a6ea4561a7b4825b4
-Patch0:		%{name}-system-libs.patch
+#Source0Download: https://github.com/libyal/libfcache/releases
+Source0:	https://github.com/libyal/libfcache/releases/download/%{version}/%{name}-alpha-%{version}.tar.gz
+# Source0-md5:	23647e6947fae9075d457551de3580d7
 URL:		https://github.com/libyal/libfcache/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1.6
 BuildRequires:	gettext-tools >= 0.18.1
-BuildRequires:	libcdata-devel >= 20130407
-BuildRequires:	libcerror-devel >= 20120425
-BuildRequires:	libcstring-devel >= 20120425
-BuildRequires:	libcthreads-devel >= 20130509
+BuildRequires:	libcdata-devel >= %{libcdata_ver}
+BuildRequires:	libcerror-devel >= %{libcerror_ver}
+BuildRequires:	libcthreads-devel >= %{libcthreads_ver}
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
-BuildRequires:	sed >= 4.0
-Requires:	libcdata >= 20130407
-Requires:	libcerror >= 20120425
-Requires:	libcstring >= 20120425
-Requires:	libcthreads >= 20130509
+Requires:	libcdata >= %{libcdata_ver}
+Requires:	libcerror >= %{libcerror_ver}
+Requires:	libcthreads >= %{libcthreads_ver}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -37,10 +40,9 @@ Summary:	Header files for libfcache library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libfcache
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	libcdata-devel >= 20130407
-Requires:	libcerror-devel >= 20120425
-Requires:	libcstring-devel >= 20120425
-Requires:	libcthreads-devel >= 20130509
+Requires:	libcdata-devel >= %{libcdata_ver}
+Requires:	libcerror-devel >= %{libcerror_ver}
+Requires:	libcthreads-devel >= %{libcthreads_ver}
 
 %description devel
 Header files for libfcache library.
@@ -62,11 +64,9 @@ Statyczna biblioteka libfcache.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %{__gettextize}
-%{__sed} -i -e 's/ po\/Makefile.in//' configure.ac
 %{__libtoolize}
 %{__aclocal} -I m4
 %{__autoconf}
