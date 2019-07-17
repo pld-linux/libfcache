@@ -1,8 +1,6 @@
-# m4/libcdata.m4
+# see m4/${libname}.m4 />= for required version of particular library
 %define		libcdata_ver	20160108
-# m4/libcerror.m4
 %define		libcerror_ver	20120425
-# m4/libcthreads.m4
 %define		libcthreads_ver	20160404
 Summary:	Library to provide generic file data cache functions
 Summary(pl.UTF-8):	Biblioteka udostępniająca funkcje do ogólnego buforowania danych z plików
