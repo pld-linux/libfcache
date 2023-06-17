@@ -1,25 +1,25 @@
 # see m4/${libname}.m4 />= for required version of particular library
-%define		libcdata_ver	20160108
+%define		libcdata_ver	20230108
 %define		libcerror_ver	20120425
 %define		libcthreads_ver	20160404
 Summary:	Library to provide generic file data cache functions
 Summary(pl.UTF-8):	Biblioteka udostępniająca funkcje do ogólnego buforowania danych z plików
 Name:		libfcache
-Version:	20181011
+Version:	20230115
 Release:	1
 License:	LGPL v3+
 Group:		Libraries
 #Source0Download: https://github.com/libyal/libfcache/releases
 Source0:	https://github.com/libyal/libfcache/releases/download/%{version}/%{name}-alpha-%{version}.tar.gz
-# Source0-md5:	23647e6947fae9075d457551de3580d7
+# Source0-md5:	75315b7152d4ef639dedb3e391be0504
 URL:		https://github.com/libyal/libfcache/
-BuildRequires:	autoconf >= 2.59
+BuildRequires:	autoconf >= 2.71
 BuildRequires:	automake >= 1.6
-BuildRequires:	gettext-tools >= 0.18.1
+BuildRequires:	gettext-tools >= 0.21
 BuildRequires:	libcdata-devel >= %{libcdata_ver}
 BuildRequires:	libcerror-devel >= %{libcerror_ver}
 BuildRequires:	libcthreads-devel >= %{libcthreads_ver}
-BuildRequires:	libtool
+BuildRequires:	libtool >= 2:2
 BuildRequires:	pkgconfig
 Requires:	libcdata >= %{libcdata_ver}
 Requires:	libcerror >= %{libcerror_ver}
