@@ -5,13 +5,13 @@
 Summary:	Library to provide generic file data cache functions
 Summary(pl.UTF-8):	Biblioteka udostępniająca funkcje do ogólnego buforowania danych z plików
 Name:		libfcache
-Version:	20240112
+Version:	20240414
 Release:	1
 License:	LGPL v3+
 Group:		Libraries
 #Source0Download: https://github.com/libyal/libfcache/releases
 Source0:	https://github.com/libyal/libfcache/releases/download/%{version}/%{name}-alpha-%{version}.tar.gz
-# Source0-md5:	d681df258c857b5ca42cdd064e915e96
+# Source0-md5:	219de76c39f9b8ecfff4c41a8840363d
 URL:		https://github.com/libyal/libfcache/
 BuildRequires:	autoconf >= 2.71
 BuildRequires:	automake >= 1.6
