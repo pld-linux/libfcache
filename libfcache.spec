@@ -5,13 +5,13 @@
 Summary:	Library to provide generic file data cache functions
 Summary(pl.UTF-8):	Biblioteka udostępniająca funkcje do ogólnego buforowania danych z plików
 Name:		libfcache
-Version:	20240414
+Version:	20260520
 Release:	1
 License:	LGPL v3+
 Group:		Libraries
 #Source0Download: https://github.com/libyal/libfcache/releases
 Source0:	https://github.com/libyal/libfcache/releases/download/%{version}/%{name}-alpha-%{version}.tar.gz
-# Source0-md5:	219de76c39f9b8ecfff4c41a8840363d
+# Source0-md5:	02de65a327b98b9ec39387dc13d5066a
 URL:		https://github.com/libyal/libfcache/
 BuildRequires:	autoconf >= 2.71
 BuildRequires:	automake >= 1.6
@@ -91,12 +91,12 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog README
-%attr(755,root,root) %{_libdir}/libfcache.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libfcache.so.1
+%{_libdir}/libfcache.so.*.*.*
+%ghost %{_libdir}/libfcache.so.1
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libfcache.so
+%{_libdir}/libfcache.so
 %{_includedir}/libfcache
 %{_includedir}/libfcache.h
 %{_pkgconfigdir}/libfcache.pc
